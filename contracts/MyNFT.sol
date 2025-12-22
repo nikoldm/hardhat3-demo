@@ -18,7 +18,7 @@ contract MyNFT is ERC721URIStorage {
         _setTokenURI(newItemId, tokenURI);  // 来自 ERC721URIStorage
 
         return newItemId;
-
     }
+    
     
 }
