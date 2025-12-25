@@ -1,9 +1,15 @@
 import hardhatToolboxMochaEthersPlugin from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 import { configVariable, defineConfig } from "hardhat/config";
+// import hardhatToolboxViemPlugin from "@nomicfoundation/hardhat-toolbox-viem";
+import "@nomicfoundation/hardhat-ethers";
+// import "@nomicfoundation/hardhat-toolbox";
+// import "@openzeppelin/hardhat-upgrades";
 
+// import  hardhatNetworkHelpers  from  "@nomicfoundation/hardhat-network-helpers" ;
 
 export default defineConfig({
   plugins: [hardhatToolboxMochaEthersPlugin],
+  // plugins: [hardhatToolboxViemPlugin],
   solidity: {
     profiles: {
       default: {
@@ -20,6 +26,12 @@ export default defineConfig({
       },
     },
   },
+  paths: {
+    artifacts: "./artifacts",
+    cache: "./cache",
+    sources: "./contracts",
+    tests: "./test"
+  },
   networks: {
     hardhatMainnet: {
       type: "edr-simulated",
@@ -35,5 +47,8 @@ export default defineConfig({
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    // hardhat: {
+    //   chainId: 1337,
+    // },
   },
 });

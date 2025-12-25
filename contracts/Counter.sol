@@ -15,5 +15,5 @@ contract Counter {
     require(by > 0, "incBy: increment should be positive");
     x += by;
     emit Increment(by);
-  }
+  } 
 }
